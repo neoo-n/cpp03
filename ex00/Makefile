@@ -1,5 +1,5 @@
-NAME	=	
-SRCS	=	main.cpp Fixed.cpp Point.cpp bsp.cpp
+NAME	=	claptrap
+SRCS	=	main.cpp ClapTrap.cpp
 OBJS	=	${SRCS:.cpp=.o}
 CC		=	c++
 CFLAGS	=	-Werror -Wextra -Wall -std=c++98

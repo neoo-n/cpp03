@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:05:40 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/08 15:13:15 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:34:39 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string name, const unsigned int hit, const unsigned int energy, const unsigned int attack)
-: _name(name), _hit_pt(hit), _energy_pt(energy), _attack_dmg(attack)
+ClapTrap::ClapTrap(const std::string name)
+: _name(name), _hit_pt(10), _energy_pt(10), _attack_dmg(0)
 {
 	std::cout << "Constructor called" << std::endl;
 }
@@ -38,6 +38,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 	this->_hit_pt = obj._hit_pt;
 	this->_energy_pt = obj._energy_pt;
 	this->_attack_dmg = obj._attack_dmg;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap(void)
@@ -76,16 +77,58 @@ void	ClapTrap::setHit(unsigned int hit)
 {
 	_hit_pt = hit;
 }
-void	ClapTrap::setEnergy(unsigned int energy);
+void	ClapTrap::setEnergy(unsigned int energy)
 {
-
+	_energy_pt = energy;
 }
 
-void	ClapTrap::setAttack(unsigned int attack);
+void	ClapTrap::setAttack(unsigned int attack)
+{
+	_attack_dmg = attack;
+}
 
 // -------------------------------- METHODS ------------------------------------
 
 void	ClapTrap::attack(const std::string &target)
 {
+	if (this->_energy_pt == 0)
+	{
+		std::cout << this->_name << " has no energy point left, cannot attack" << std::endl;
+		return ;
+	}
+	if (this->_hit_pt == 0)
+	{
+		std::cout << this->_name << " has no hit point left, cannot attack" << std::endl;
+		return ;
+	}
+	this->_energy_pt--;
+	std::cout << "ClapTrap " << this->_name << " attacks " << target;
+	std::cout << ", causing " << this->_attack_dmg << " points of damage!" << std::endl;
+}
 
+void	ClapTrap::takeDamage(unsigned int amount)
+{
+	if (this->_hit_pt == 0)
+	{
+		std::cout << this->_name << " has already no hit point left" << std::endl;
+		return ;
+	}
+	this->_hit_pt -= amount;
+	
+}
+
+void	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->_energy_pt == 0)
+	{
+		std::cout << this->_name << " has no energy point left, cannot repair itself" << std::endl;
+		return ;
+	}
+	if (this->_hit_pt == 0)
+	{
+		std::cout << this->_name << " has no hit point left, cannot repair itself" << std::endl;
+		return ;
+	}
+	this->_energy_pt--;
+	this->_hit_pt += amount;
 }
