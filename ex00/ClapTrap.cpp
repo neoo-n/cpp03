@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:05:40 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/09 11:34:39 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/09 14:45:24 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_hit_pt == 0)
 	{
 		std::cout << this->_name << " has already no hit point left" << std::endl;
+		return ;
+	}
+	if (this->_hit_pt < amount)
+	{
+		this->_hit_pt = 0;
 		return ;
 	}
 	this->_hit_pt -= amount;
