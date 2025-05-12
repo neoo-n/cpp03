@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:05:40 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/09 14:45:24 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/12 15:07:45 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ClapTrap.hpp"
 
@@ -17,19 +17,19 @@
 ClapTrap::ClapTrap(void)
 : _name(0), _hit_pt(10), _energy_pt(10), _attack_dmg(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 : _name(other._name), _hit_pt(other._hit_pt), _energy_pt(other._energy_pt), _attack_dmg(other._attack_dmg)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string name)
 : _name(name), _hit_pt(10), _energy_pt(10), _attack_dmg(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
@@ -43,7 +43,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 // ------------------------------- GET AND SET ---------------------------------
