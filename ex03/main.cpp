@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,16 +6,16 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:26:15 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/12 16:58:21 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/13 11:47:47 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main(void)
 {
-	FragTrap	c1("left sock");
-	FragTrap	c2("right sock");
+	DiamondTrap	c1("left sock");
+	DiamondTrap	c2("right sock");
 
 	std::cout << std::endl << "----------------------- ATTRIBUTES ---------------------" << std::endl;
 	std::cout << "name : " << c1.getName() << ", " << c2.getName() << std::endl;
@@ -42,12 +42,12 @@ int	main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << std::endl << "----------------------- HIGH FIVES -------------------------" << std::endl;
+	std::cout << std::endl << "----------------------- WHO HE IS -------------------------" << std::endl;
 	std::cout << "energy pts of right sock : " << c2.getEnergy() << std::endl;
-	c2.highFivesGuys();
-	c1.highFivesGuys();
+	c2.whoAmI();
+	c1.whoAmI();
 	c1.setEnergy(2);
 	std::cout << "energy pts of left sock : " << c1.getEnergy() << std::endl;
-	c1.highFivesGuys();
+	c1.whoAmI();
 	return (0);
 }
