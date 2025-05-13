@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:26:15 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/13 11:47:47 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:12:04 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	DiamondTrap	c2("right sock");
 
 	std::cout << std::endl << "----------------------- ATTRIBUTES ---------------------" << std::endl;
-	std::cout << "name : " << c1.getName() << ", " << c2.getName() << std::endl;
+	std::cout << "name : " << c1.ClapTrap::getName() << ", " << c2.getName() << std::endl;
 	std::cout << "hit pts : " << c1.getHit() << ", " << c2.getHit() << std::endl;
 	std::cout << "energy pts : " << c1.getEnergy() << ", " << c2.getEnergy() << std::endl;
 	std::cout << "attack dmgs : " << c1.getAttack() << ", " << c2.getAttack() << std::endl;
@@ -49,5 +49,10 @@ int	main(void)
 	c1.setEnergy(2);
 	std::cout << "energy pts of left sock : " << c1.getEnergy() << std::endl;
 	c1.whoAmI();
+	c2.setHit(2);
+	std::cout << "energy pts of right sock : " << c2.getEnergy() << std::endl;
+	c2.whoAmI();
+
+	std::cout << std::endl << "---------------------------------- END ------------------------------" << std::endl;
 	return (0);
 }

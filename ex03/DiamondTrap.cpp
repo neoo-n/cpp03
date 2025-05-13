@@ -15,21 +15,21 @@
 // ------------------------ CONSTRUCTORS & DESTRUCTOR ---------------------------
 
 DiamondTrap::DiamondTrap(void)
-: _name(0), ClapTrap("_clap_name"), ScavTrap(), FragTrap()
+: ClapTrap("_clap_name"), ScavTrap(), FragTrap(), _name(0)
 {
 	this->_energy_pt = 50;
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-: ClapTrap(other._name + "_clap_name"), ScavTrap(other), FragTrap(other)
+: ClapTrap(other._name + "_clap_name"), ScavTrap(other), FragTrap(other), _name(other._name)
 {
 	this->_energy_pt = 50;
 	std::cout << "Copy DiamondTrap constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string name)
-: _name(name), ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
+: ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap(), _name(name)
 {
 	this->_energy_pt = 50;
 	std::cout << "DiamondTrap constructor called" << std::endl;
@@ -50,24 +50,19 @@ DiamondTrap::~DiamondTrap(void)
 	std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
-// -------------------------------- METHODS ------------------------------------
+// ------------------------------- GET AND SET ---------------------------------
 
-void	DiamondTrap::attack(const std::string &target)
+std::string		DiamondTrap::getName(void) const
 {
-	if (this->_energy_pt == 0)
-	{
-		std::cout << this->_name << " has no energy point left, cannot attack" << std::endl;
-		return ;
-	}
-	if (this->_hit_pt == 0)
-	{
-		std::cout << this->_name << " has no hit point left, cannot attack" << std::endl;
-		return ;
-	}
-	this->_energy_pt--;
-	std::cout << "DiamondTrap " << this->_name << " attacks " << target;
-	std::cout << ", causing " << this->_attack_dmg << " points of damage!" << std::endl;
+	return (_name);
 }
+
+void	DiamondTrap::setName(std::string name)
+{
+	_name = name;
+}
+
+// -------------------------------- METHODS ------------------------------------
 
 void	DiamondTrap::whoAmI(void)
 {
