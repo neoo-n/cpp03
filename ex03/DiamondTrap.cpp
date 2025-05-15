@@ -37,11 +37,14 @@ DiamondTrap::DiamondTrap(const std::string name)
 
 DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &obj)
 {
-	this->_name = obj._name;
-	this->ClapTrap::_name = obj._name + "_clap_name";
-	this->_hit_pt = obj._hit_pt;
-	this->_energy_pt = obj._energy_pt;
-	this->_attack_dmg = obj._attack_dmg;
+	if (this != &obj)
+	{
+		this->_name = obj._name;
+		this->ClapTrap::_name = obj._name + "_clap_name";
+		this->_hit_pt = obj._hit_pt;
+		this->_energy_pt = obj._energy_pt;
+		this->_attack_dmg = obj._attack_dmg;
+	}
 	return (*this);
 }
 

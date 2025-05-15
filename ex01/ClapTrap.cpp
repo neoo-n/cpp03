@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:05:40 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/12 16:36:23 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/15 14:40:19 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
@@ -34,10 +34,13 @@ ClapTrap::ClapTrap(const std::string name)
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 {
-	this->_name = obj._name;
-	this->_hit_pt = obj._hit_pt;
-	this->_energy_pt = obj._energy_pt;
-	this->_attack_dmg = obj._attack_dmg;
+	if (this != &obj)
+	{
+		this->_name = obj._name;
+		this->_hit_pt = obj._hit_pt;
+		this->_energy_pt = obj._energy_pt;
+		this->_attack_dmg = obj._attack_dmg;
+	}
 	return (*this);
 }
 

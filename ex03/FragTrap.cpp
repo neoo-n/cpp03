@@ -39,10 +39,13 @@ FragTrap::FragTrap(const std::string name)
 
 FragTrap	&FragTrap::operator=(const FragTrap &obj)
 {
-	this->_name = obj._name;
-	this->_hit_pt = obj._hit_pt;
-	this->_energy_pt = obj._energy_pt;
-	this->_attack_dmg = obj._attack_dmg;
+	if (this != &obj)
+	{
+		this->_name = obj._name;
+		this->_hit_pt = obj._hit_pt;
+		this->_energy_pt = obj._energy_pt;
+		this->_attack_dmg = obj._attack_dmg;
+	}
 	return (*this);
 }
 
