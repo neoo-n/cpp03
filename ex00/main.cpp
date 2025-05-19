@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:26:15 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/09 14:50:02 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/19 14:58:40 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ int	main(void)
 		std::cout << "hit pts of left sock : " << c1.getHit() << " and energy pts : " << c1.getEnergy() << std::endl;
 	}
 	std::cout << std::endl;
+
+	std::cout << std::endl << "-------------------- DESTRUCTORS ------------------------" << std::endl;
 	return (0);
 }

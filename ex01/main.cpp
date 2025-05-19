@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:26:15 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/12 16:54:01 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/19 14:59:04 by dvauthey         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
@@ -42,11 +42,13 @@ int	main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << std::endl << "----------------------- GATE KEEP -------------------------" << std::endl;
+	std::cout << std::endl << "--------------------- GATE KEEP -------------------------" << std::endl;
 	std::cout << "energy pts of right sock : " << c2.getEnergy() << std::endl;
 	c2.guardGate();
 	c1.setEnergy(2);
 	std::cout << "energy pts of left sock : " << c1.getEnergy() << std::endl;
 	c1.guardGate();
+
+	std::cout << std::endl << "-------------------- DESTRUCTORS ------------------------" << std::endl;
 	return (0);
 }

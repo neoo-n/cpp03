@@ -6,7 +6,7 @@
 /*   By: dvauthey <dvauthey@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 11:26:15 by dvauthey          #+#    #+#             */
-/*   Updated: 2025/05/13 15:12:04 by dvauthey         ###   ########.fr       */
+/*   Updated: 2025/05/19 15:01:15 by dvauthey         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << std::endl << "----------------------- WHO HE IS -------------------------" << std::endl;
+	std::cout << std::endl << "---------------------- WHO HE IS -------------------------" << std::endl;
 	std::cout << "energy pts of right sock : " << c2.getEnergy() << std::endl;
 	c2.whoAmI();
 	c1.whoAmI();
@@ -53,6 +53,6 @@ int	main(void)
 	std::cout << "energy pts of right sock : " << c2.getEnergy() << std::endl;
 	c2.whoAmI();
 
-	std::cout << std::endl << "---------------------------------- END ------------------------------" << std::endl;
+	std::cout << std::endl << "--------------------- DESTRUCTORS -----------------------" << std::endl;
 	return (0);
 }
